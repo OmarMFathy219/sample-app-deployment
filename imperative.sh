@@ -11,4 +11,4 @@ kubectl scale deployment simple-deployment --replicas=1 --namespace=sandbox
 kubectl expose deployment simple-deployment --name=simple-service --type=NodePort --port=3100 --target-port=8080 --namespace=sandbox
 
 # Port-forward service to localhost
-kubectl port-forward service/simple-service 3100:3100 --namespace=sandbox &
+kubectl port-forward service/simple-service 3100:3100 --namespace=sandbox
