@@ -1,20 +1,20 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: simple-deployment
+  namespace: sandbox
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: trivial-go-web-app
+      app: simple-app
   template:
     metadata:
       labels:
-        app: trivial-go-web-app
+        app: simple-app
     spec:
       containers:
-      - name: webserver-simple
+      - name: simple-app
         image: docker.io/kostiscodefresh/gitops-simple-app:v1.0
         ports:
         - containerPort: 8080

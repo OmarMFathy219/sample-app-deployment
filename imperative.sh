@@ -5,7 +5,8 @@ kubectl create namespace sandbox
 kubectl create deployment simple-deployment --image=docker.io/kostiscodefresh/gitops-simple-app:v1.0 --namespace=sandbox
 
 # Scale deployment to 1 replica
-kubectl scale deployment simple-deployment --replicas=3 --namespace=sandbox
+kubectl scale deployment simple-deployment --replicas=1 --namespace=sandbox
+
 # Expose deployment as a service
 kubectl expose deployment simple-deployment --name=simple-service --type=NodePort --port=3100 --target-port=8080 --namespace=sandbox
 
